@@ -1,5 +1,8 @@
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: ['./dist/**/*.html'],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -11,6 +14,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('tailwindcss-debug-screens'),
+    // require('tailwindcss-debug-screens'),
   ],
 }

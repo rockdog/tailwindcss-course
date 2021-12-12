@@ -1,3 +1,9 @@
+var devPlugins = [];
+
+if (process.env.NODE_ENV !== 'production') {
+  devPlugins.push(require('tailwindcss-debug-screens'));
+}
+
 module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
@@ -13,7 +19,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [
-    // require('tailwindcss-debug-screens'),
-  ],
+  plugins: devPlugins,
 }
